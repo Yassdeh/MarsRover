@@ -22,14 +22,14 @@ public class Rover {
     }
 
     public void execute(char[] commands) {
+        if (commands == null) return;
         obstacle = null;
         for (char symbol : commands) {
-            Command command = COMMANDS.get(symbol);
-            if (command == null) {
-                throw new IllegalArgumentException("Commande inconnue : " + symbol);
-            }
-            if (!command.executeOn(this)) {
-                return;
+            Command command = COMMANDS.get(Character.toLowerCase(symbol));
+            if (command != null) {
+                if (!command.executeOn(this)) {
+                    return;
+                }
             }
         }
     }

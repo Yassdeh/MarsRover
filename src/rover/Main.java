@@ -8,7 +8,7 @@ public class Main {
         Grid grid = new Grid(100, 100, Set.of());
         Rover rover = new Rover(new Position(0, 0), Direction.N, grid);
 
-        rover.execute("ffrff".toCharArray());
+        rover.execute("ffrffxYZ".toCharArray());
 
         System.out.println(rover.getPosition() + " " + rover.getDirection());
     }
